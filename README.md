@@ -29,10 +29,8 @@ Everything from GNOME Clocks 46.0, plus:
 Ubuntu / Debian:
 
 ```bash
-sudo apt install build-essential meson ninja-build pkg-config gettext valac itstool yelp-tools \
-     libgtk-4-dev libadwaita-1-dev libgweather-4-dev libgeocode-glib-dev libgeoclue-2-dev \
-     libgirepository1.0-dev libglib2.0-dev libjson-glib-dev libportal-dev libportal-gtk4-dev \
-     desktop-file-utils libgtk-4-media-gstreamer
+chmod +x *.sh
+bash ./install.sh
 ```
 
 Other distros: install the equivalent `meson`, `ninja`, `vala`, GTK 4, libadwaita 1, GWeather 4, geocode-glib, geoclue, libportal and GStreamer GTK4 media packages.

@@ -17,15 +17,8 @@ Features added
 Build & install
 ---------------
 
-Requirements (Ubuntu/Debian):
-  sudo apt install build-essential meson ninja-build pkg-config gettext valac itstool yelp-tools \
-       libgtk-4-dev libadwaita-1-dev libgweather-4-dev libgeocode-glib-dev libgeoclue-2-dev \
-       libgirepository1.0-dev libglib2.0-dev libjson-glib-dev libportal-dev libportal-gtk4-dev \
-       desktop-file-utils libgtk-4-media-gstreamer
-
-Then, from this folder:
-
-  bash ./install.sh
+    chmod +x *.sh
+    bash ./install.sh
 
 The install script builds the app, installs it to /usr/local, overwrites every copy
 of the old gnome-clocks binary (including /usr/bin), installs the custom alarm sound,
