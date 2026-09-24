@@ -9,6 +9,11 @@
 # ./install.sh
 set -euo pipefail
 
+sudo apt install -y build-essential meson ninja-build pkg-config gettext valac itstool yelp-tools \
+     libgtk-4-dev libadwaita-1-dev libgweather-4-dev libgeocode-glib-dev libgeoclue-2-dev \
+     libgirepository1.0-dev libglib2.0-dev libjson-glib-dev libportal-dev libportal-gtk4-dev \
+     desktop-file-utils libgtk-4-media-gstreamer
+     
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "$SCRIPT_DIR"
 
