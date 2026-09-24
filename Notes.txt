@@ -1,0 +1,42 @@
+J~Net Clocks 46.0
+=================
+
+A fork of GNOME Clocks 46.0 with custom alarm sound settings.
+
+Features added
+--------------
+* Settings menu (hamburger menu -> Settings)
+  - Sound Output Device: Automatic (Bluetooth when connected, otherwise HDMI) / HDMI / Bluetooth
+  - Sound Volume: default 100%
+  - Custom Alarm Sound: pick any audio file (wav, mp3, oga, ogg, flac, opus, m4a, aac, wma, aiff, webm, mid...)
+  - Test Alarm Sound button
+* Default alarm sound: /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
+* On ring the app auto-selects the output device and sets the configured volume
+
+Build & install
+---------------
+
+Requirements (Ubuntu/Debian):
+  sudo apt install build-essential meson ninja-build pkg-config gettext valac itstool yelp-tools \
+       libgtk-4-dev libadwaita-1-dev libgweather-4-dev libgeocode-glib-dev libgeoclue-2-dev \
+       libgirepository1.0-dev libglib2.0-dev libjson-glib-dev libportal-dev libportal-gtk4-dev \
+       desktop-file-utils libgtk-4-media-gstreamer
+
+Then, from this folder:
+
+  bash ./install.sh
+
+The install script builds the app, installs it to /usr/local, overwrites every copy
+of the old gnome-clocks binary (including /usr/bin), installs the custom alarm sound,
+updates the D-Bus service files and desktop launchers, compiles the settings schemas
+and refreshes the desktop database.
+
+If the menu still shows the old app after installing, log out and back in once.
+
+The custom alarm sound (alarm-clock-elapsed.oga) is copied to
+/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga automatically.
+
+Settings are stored in GSettings (org.gnome.clocks):
+  alarm-sound-file       custom audio file path (empty = default sound)
+  alarm-output-device    auto | hdmi | bluetooth
+  alarm-output-volume    0.0 to 1.0 (default 1.0 = 100%)
