@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <template class="ClocksSettingsDialog" parent="AdwWindow">
+    <property name="modal">True</property>
+    <property name="destroy_with_parent">True</property>
+    <property name="default-width">520</property>
+    <property name="default-height">480</property>
+    <property name="title" translatable="yes">Settings</property>
+    <child>
+      <object class="GtkShortcutController">
+        <property name="scope">managed</property>
+        <child>
+          <object class="GtkShortcut">
+            <property name="trigger">Escape</property>
+            <property name="action">action(window.close)</property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <property name="content">
+      <object class="AdwToolbarView">
+        <child type="top">
+          <object class="AdwHeaderBar">
+            <property name="show-start-title-buttons">False</property>
+            <property name="show-end-title-buttons">False</property>
+            <child type="end">
+              <object class="GtkButton" id="close_button">
+                <property name="label" translatable="yes">_Close</property>
+                <property name="use-underline">True</property>
+                <signal name="clicked" handler="close_dialog" swapped="no"/>
+              </object>
+            </child>
+          </object>
+        </child>
+        <child>
+          <object class="AdwClamp">
+            <property name="maximum-size">520</property>
+            <child>
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">12</property>
+                <property name="margin-top">18</property>
+                <property name="margin-bottom">18</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+                <child>
+                  <object class="GtkListBox">
+                    <property name="selection_mode">none</property>
+                    <child>
+                      <object class="AdwComboRow" id="device_row">
+                        <property name="title" translatable="yes">Sound Output Device</property>
+                        <property name="subtitle" translatable="yes">Automatic uses Bluetooth when connected, otherwise HDMI</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwSpinRow" id="volume_row">
+                        <property name="title" translatable="yes">Sound Volume</property>
+                        <property name="subtitle" translatable="yes">Volume used for the alarm sound (default 100%)</property>
+                        <property name="adjustment">
+                          <object class="GtkAdjustment">
+                            <property name="lower">0</property>
+                            <property name="upper">100</property>
+                            <property name="step_increment">5</property>
+                            <property name="page_increment">10</property>
+                            <property name="value">100</property>
+                          </object>
+                        </property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="AdwActionRow" id="sound_row">
+                        <property name="title" translatable="yes">Custom Alarm Sound</property>
+                        <child type="suffix">
+                          <object class="GtkButton" id="choose_button">
+                            <property name="label" translatable="yes">Choose File...</property>
+                            <signal name="clicked" handler="choose" swapped="no"/>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                    <style>
+                      <class name="boxed-list"/>
+                    </style>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="reset_button">
+                    <property name="label" translatable="yes">Use Default Sound</property>
+                    <property name="halign">center</property>
+                    <signal name="clicked" handler="reset_sound" swapped="no"/>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkButton" id="test_button">
+                    <property name="label" translatable="yes">Test Alarm Sound</property>
+                    <property name="halign">center</property>
+                    <signal name="clicked" handler="test" swapped="no"/>
+                    <style>
+                      <class name="suggested-action"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>
