@@ -12,6 +12,7 @@ Features added
   - Test Alarm Sound button
 * Default alarm sound: /usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga
 * On ring the app auto-selects the output device and sets the configured volume
+* The countdown timer uses the same alarm sound settings (custom file, volume, output device)
 
 Build & install
 ---------------

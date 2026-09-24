@@ -18,6 +18,7 @@ Everything from GNOME Clocks 46.0, plus:
     - `wav`, `mp3`, `oga`, `ogg`, `flac`, `opus`, `m4a`, `aac`, `wma`, `aiff`, `webm`, `mid`…
   - **Test Alarm Sound** button — plays the configured sound at the configured device/volume
 - Default alarm sound: `/usr/share/sounds/freedesktop/stereo/alarm-clock-elapsed.oga`
+- The **countdown timer** uses the same alarm sound settings (custom file, volume, output device) when it finishes
 - On ring, the app automatically:
   - selects the output device (Bluetooth when connected, otherwise HDMI / default)
   - unmutes the output and sets it to the configured volume (default max)

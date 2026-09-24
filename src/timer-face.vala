@@ -78,7 +78,7 @@ public class Face : Adw.Bin, Clocks.Clock {
             save ();
         });
 
-        bell = new Utils.Bell (GLib.File.new_for_uri ("resource://org/gnome/clocks/sounds/complete.oga"));
+        bell = new Utils.Bell (GLib.File.new_for_path (Utils.DEFAULT_ALARM_SOUND));
         notification = new GLib.Notification (_("Time is up!"));
         notification.set_body (_("Timer countdown finished"));
         notification.set_priority (HIGH);
